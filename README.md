@@ -1,4 +1,4 @@
-# Project 1 | Classify gender from text
+# Project 1 | Classify gender from text จำแนกเพศจากข้อความ
 
 - Machine Learning accuracy 96 %
 - Use LogisticRegression
@@ -14,12 +14,16 @@
 ## API
 
 ```http
-  GET https://classifygenderthai.herokuapp.com/?word=${word}
+  GET https://natthanarong.pythonanywhere.com/?word=${word}
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `word`      | `string` | **Required**. word to fetch |
+
+- เซิร์ฟเวอร์นี้มีข้อจำกัดการใช้งานสูง(Server free)
+ - ประมวลผลได้ไม่เกิน 20 ครั้งต่อวัน
+ - ต้องกดต่ออายุทุก 3 เดือน
 
 ## Website
 ![Max5000_30](./Pic/webpage.png)
@@ -27,7 +31,7 @@
 - [https://classifygenderthai.netlify.app/](https://classifygenderthai.netlify.app/)
 
 ## Data collection
-ดึงข้อมูลมาจาก Twitter ด้วย Twint จำนวนประมาณ 250,000 ข้อความ แต่เนื่องด้วยข้อจำกัดทางอุปกรณ์และ Server จึงนำข้อมูลมาใช้เพียง 5,000 ข้อความ และใช้ feature 10,000 feature ( 1 feature ต่อ 1 คำ ) ในการจำแนก
+ดึงข้อมูลมาจาก Twitter ด้วย Twint จำนวนประมาณ 250,000 ข้อความ แต่เนื่องด้วยข้อจำกัดทางอุปกรณ์ จึงนำข้อมูลมา 5,000 ข้อความ เพื่อหา feature 10,000 feature  ในการจำแนก แล้วจึงสุ่มข้อความมา 50,000 ช้อความจากชายและหญิงจำนวนเท่าๆกัน แล้วนำมาใส่ feature พบว่ามี 19 ข้อความที่ไม่เจอ feature เลย ข้อความที่นำไปสร้างโมเดลจึงมีทั้งหมด 49,981 ข้อความ
 
 ## Data visualization
 ![Max5000_30](./Pic/Max5000_30.jpg)
